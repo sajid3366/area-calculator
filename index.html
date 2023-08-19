@@ -17,7 +17,7 @@
         <h1>Welcome to the Calculator</h1>
     </header>
     <main>
-        <section class="flex">
+        <section class="flex flex-col lg:flex-row">
             <div class="grid grid-cols-3 gap-4 flex-1 p-8">
                 <!-- this is card 1 -->
                 <div class="card card-compact w-96 bg-base-100 shadow-xl">
@@ -26,14 +26,16 @@
                         <h2 class=" text-2xl font-semibold text-center">Triangle</h2>
                         <p class="text-center mb-4">Area (A) = 0.5 x b x h</p>
                         <div class="text-center">
-                            <input class="border bg-gray-100 h-8 w-[30%] px-2" type="text" name="" id="" placeholder="b">
+                            <input class="border bg-gray-100 h-8 w-[30%] px-2" type="text" name="" id="triangle-base" placeholder="b">
                             <span class="ml-2">cm</span>
-                            <input class="border bg-gray-100 h-8 ml-4 w-[30%] px-2" type="text" name="" id="" placeholder="h">
+                            <input class="border bg-gray-100 h-8 ml-4 w-[30%] px-2" type="text" name="" id="triangle-height" placeholder="h">
                             <span class="ml-2">cm</span>
+
+                            <p class="mt-3 text-xl">Area: <input id="triangle-area" type="text" class="border px-2"></p>
 
                         </div>
                         <div class="card-actions">
-                            <button class="btn btn-primary w-full mt-4">Buy Now</button>
+                            <button onclick="calculateTriangleArea()" class="btn btn-primary w-full mt-4">Calculate</button>
                         </div>
                     </div>
                 </div>
@@ -41,23 +43,25 @@
                 <div class="card card-compact w-96 bg-base-100 shadow-xl">
                     <figure><img src="./images/rectangle.png" alt="Shoes" /></figure>
                     <div class="card-body ">
-                        <h2 class=" text-2xl font-semibold text-center">Triangle</h2>
-                        <p class="text-center mb-4">Area (A) = 0.5 x b x h</p>
+                        <h2 class=" text-2xl font-semibold text-center">Rectangle</h2>
+                        <p class="text-center mb-4">Area (A) = w x l</p>
                         <div class="text-center">
-                            <input class="border bg-gray-100 h-8 w-[30%] px-2" type="text" name="" id="" placeholder="b">
+                            <input class="border bg-gray-100 h-8 w-[30%] px-2" type="text" name="" id="rectangle-width" placeholder="b">
                             <span class="ml-2">cm</span>
-                            <input class="border bg-gray-100 h-8 ml-4 w-[30%] px-2" type="text" name="" id="" placeholder="h">
+                            <input class="border bg-gray-100 h-8 ml-4 w-[30%] px-2" type="text" name="" id="rectangle-length" placeholder="h">
                             <span class="ml-2">cm</span>
+                            <p class="mt-3 text-xl">Area: <input id="rectangle-area" type="text" class="border px-2"></p>
+
 
                         </div>
                         <div class="card-actions">
-                            <button class="btn btn-primary w-full mt-4">Buy Now</button>
+                            <button onclick="calculateRectangleArea()" class="btn btn-primary w-full mt-4">Calculate</button>
                         </div>
                     </div>
                 </div>
                 <!-- this is card 3 -->
                 <div class="card card-compact w-96 bg-base-100 shadow-xl">
-                    <figure><img src="./images/triangle.png" alt="Shoes" /></figure>
+                    <figure><img src="./images/parallelogram.png" alt="Shoes" /></figure>
                     <div class="card-body ">
                         <h2 class=" text-2xl font-semibold text-center">Triangle</h2>
                         <p class="text-center mb-4">Area (A) = 0.5 x b x h</p>
@@ -75,7 +79,7 @@
                 </div>
                 <!-- this is card 4 -->
                 <div class="card card-compact w-96 bg-base-100 shadow-xl">
-                    <figure><img src="./images/triangle.png" alt="Shoes" /></figure>
+                    <figure><img src="./images/ellipse.png" alt="Shoes" /></figure>
                     <div class="card-body ">
                         <h2 class=" text-2xl font-semibold text-center">Triangle</h2>
                         <p class="text-center mb-4">Area (A) = 0.5 x b x h</p>
@@ -94,11 +98,16 @@
 
             </div>
 
-            <div class="border ">
-                <h2><u>Area Calculation</u> </h2>
+            <div class="border w-[300px] h-[400px] text-center">
+                <div>
+                    <u>Area Calculation</u>
+
+                </div>
             </div>
         </section>
     </main>
+
+    <script src="script/area.js"></script>
 </body>
 
 </html>
